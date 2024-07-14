@@ -1,25 +1,27 @@
-import userData from "../userData.json";
-import friends from "../friends.json";
-import transactions from "../transactions.json";
-import Profile from "./Profile/Profile";
-import FriendList from "./FriendList/FriendList";
-import TransactionHistory from "./TransactionHistory/TransactionHistory";
+import { useState } from "react";
 import "../index.css"
+import initialContacts from "../contacts.json"
+import ContactList from "./ContactList/ContactList"
+import ContactForm from "./ContactForm/ContactForm";
 
 
 const App = () => {
+
+  const [contacts, setContacts] = useState(initialContacts);
+
+ const addContact = (newContact) => {
+    setContacts((prevContacts) => {
+      return [...prevContacts, newContact];
+    });
+  };
+
     return (
-    <>
-      <Profile
-        name={userData.username}
-        tag={userData.tag}
-        location={userData.location}
-        image={userData.avatar}
-        stats={userData.stats}
-      />
-      <FriendList friends={friends} />
-      <TransactionHistory items={transactions} />
-    </>
+    <div className="container">
+  <h1 className="title">Phonebook</h1>
+  <ContactForm onAdd={addContact} />
+  {/* <SearchBox /> */}
+  <ContactList contacts={contacts} />
+    </div>
   );
 };
 
