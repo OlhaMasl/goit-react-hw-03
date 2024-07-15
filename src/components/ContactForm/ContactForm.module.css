@@ -1,0 +1,22 @@
+.form {
+    padding: 20px;
+    border: 2px solid black;
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 360px;
+}
+
+.dataFielf {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.addContactBtn {
+    padding: 8px;
+    width: 120px;
+    height: 46px;
+    margin: 0 auto;
+}
