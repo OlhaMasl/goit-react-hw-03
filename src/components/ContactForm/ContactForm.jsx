@@ -4,14 +4,18 @@ import { nanoid } from "nanoid"
 
 const ContactForm = ({ onAdd }) => {
     const initialValues = {
-        id: nanoid(),
         name: "",
         number: "",
     }
 
     const handleSubmit = data => {
         console.log(data);
-        return onAdd(data);
+        return onAdd({
+            id: nanoid(),
+            name: data.name,
+            number: data.number,
+            }
+        );
     }
 
     return (
