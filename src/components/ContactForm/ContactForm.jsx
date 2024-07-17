@@ -9,8 +9,7 @@ const ContactForm = ({ onAdd }) => {
     }
 
     const handleSubmit = data => {
-        console.log(data);
-        return onAdd({
+        onAdd({
             id: nanoid(),
             name: data.name,
             number: data.number,
@@ -20,7 +19,7 @@ const ContactForm = ({ onAdd }) => {
 
     return (
         <div>
-            <Formik initialValues={{initialValues}} onSubmit={handleSubmit}>
+            <Formik initialValues={initialValues} onSubmit={handleSubmit}>
                 <Form className={s.form}>
                     <label className={s.dataFielf}>
                         <span>Name</span>
