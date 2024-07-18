@@ -10,9 +10,9 @@ const App = () => {
 
   const [contacts, setContacts] = useState(() => {
     const savedContacts = JSON.parse(window.localStorage.getItem("contacts"));
-    if (savedContacts.length) {
+    if (savedContacts !== null) {
       return savedContacts;
-    }
+    };
     return initialContacts;
   });
   
