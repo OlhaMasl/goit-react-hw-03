@@ -20,3 +20,7 @@
     height: 46px;
     margin: 0 auto;
 }
+
+.errorMessages {
+    color: red;
+}

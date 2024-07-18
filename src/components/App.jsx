@@ -36,9 +36,9 @@ const App = () => {
   const filteredContacts = contacts.filter((contact) => contact.name.toLowerCase().includes(filter.toLowerCase()));
 
     return (
-    <div className="container">
-  <h1 className="title">Phonebook</h1>
-  <ContactForm onAdd={addContact} />
+      <div className="container">
+        <h1 className="title">Phonebook</h1>
+        <ContactForm onAdd={addContact} />
         <SearchBox value={filter} onFilter={setFilter} />
         <ContactList contacts={filteredContacts} onDelete={deleteContact} />
     </div>
